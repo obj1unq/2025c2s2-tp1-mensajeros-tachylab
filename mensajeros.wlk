@@ -80,7 +80,7 @@ object camion {
 
 object puenteBrooklin {
 	method puedePasar(empleado){
-		return empleado.pesoTotal() < 1000
+		return empleado.pesoTotal() <= 1000
 	}
 }
 
