@@ -1,0 +1,32 @@
+import mensajeros.*
+
+describe "Casos de prueba mencionados requeridos" {
+    test "El paquete de George no está pagado y no puede ser llevado por Neo a la Matrix" {
+        paqueteGeorge.pagado(false)
+        paqueteGeorge.destino(matrix)
+        neo.tieneCredito(false)
+        assert.notThat(paqueteGeorge.puedeEntregarlo(neo))
+    }
+
+    test "El paquete de George está pagado y puede ser llevado por Jean a la Matrix" {
+        paqueteGeorge.pagado(true)
+        paqueteGeorge.destino(matrix)
+        assert.that(paqueteGeorge.puedeEntregarlo(jeanGray))
+    }
+
+    test "El paquete de George está pagado pero no puede ser llevado por Sara, que pesa 70 kg y va en camión con 1 acoplado, al puente de Brooklin" {
+        paqueteGeorge.pagado(true)
+        paqueteGeorge.destino(puenteBrooklin)
+        saraConor.peso(70)
+        saraConor.vehiculo(camion)
+        camion.acoplados(1)
+        assert.notThat(paqueteGeorge.puedeEntregarlo(saraConor))
+    }
+    test "El paquete de George está pagado y puede ser llevado por Sara, que pesa 70 kg y va en moto, al puente de Brooklin" {
+        paqueteGeorge.pagado(true)
+        paqueteGeorge.destino(puenteBrooklin)
+        saraConor.peso(70)
+        saraConor.vehiculo(moto)
+        assert.that(paqueteGeorge.puedeEntregarlo(saraConor))
+    }
+}

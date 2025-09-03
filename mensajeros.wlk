@@ -1,6 +1,6 @@
 // El paquete de George Lucas
 
-object paquete {
+object paqueteGeorge {
  //variables
 	var property pagado = null
 	var property destino = null
@@ -13,7 +13,7 @@ object paquete {
 // Trabajadores de la empresa de mensajeria
 
 object jeanGray {
- //metodos funcionales
+ // metodos funcionales
 	method pesoTotal() {
 		return 65
 	}
@@ -36,7 +36,7 @@ object neo {
 		credito = _credito
 	}
  //metodos funcionales
- 	method pesoTotal() {
+	method pesoTotal() {
 		return 0
 	}
 }
@@ -59,7 +59,7 @@ object saraConor {
 
 object moto {
 	method peso() {
-	  return 100
+	return 100
 	}
 }
 
@@ -68,7 +68,7 @@ object camion {
 	var acoplados = 0
  // metodos funcionales
 	method acoplados(_acoplados) {
-	  acoplados = _acoplados
+	acoplados = _acoplados
 	}
 
 	method peso() {

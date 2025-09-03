@@ -1,18 +1,18 @@
 import mensajeros.*
 
-describe "Test del pago y el destino del paquete" {
-    test "Verificar si el paquete está pagado" {
-        paquete.pagado(false)
-        assert.equals(false, paquete.pagado())
-        paquete.pagado(true)
-        assert.equals(true, paquete.pagado())
-    }
+describe "Test del pago y el destino del paquete de George" {
+  test "Verificar si el paquete de George está pagado" {
+      paqueteGeorge.pagado(false)
+      assert.equals(false, paqueteGeorge.pagado())
+      paqueteGeorge.pagado(true)       
+      assert.equals(true, paqueteGeorge.pagado())
+  }
 
-    test "Verificar el destino del paquete" {
-        paquete.destino(matrix)
-        assert.equals(matrix, paquete.destino())
-        paquete.destino(puenteBrooklin)
-        assert.equals(puenteBrooklin, paquete.destino())
+  test "Verificar el destino del paquete de George" {
+    paqueteGeorge.destino(matrix)
+    assert.equals(matrix, paqueteGeorge.destino())
+    paqueteGeorge.destino(puenteBrooklin)
+    assert.equals(puenteBrooklin, paqueteGeorge.destino())
     }
 
 }
