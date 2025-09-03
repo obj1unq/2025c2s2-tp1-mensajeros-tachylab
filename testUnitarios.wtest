@@ -24,4 +24,13 @@ describe "Test del peso total y la disponibilidad de llamada de los empleados" {
     neo.tieneCredito(true)
     assert.that(neo.puedeLlamar())
   }
+
+  test "Test del peso variable de Sara" {
+    saraConor.peso(50)
+    saraConor.vehiculo(moto)
+    assert.equals(150, saraConor.pesoTotal())
+    saraConor.vehiculo(camion)
+    camion.acoplados(2)
+    assert.equals(1550, saraConor.pesoTotal())
+  }
 }
