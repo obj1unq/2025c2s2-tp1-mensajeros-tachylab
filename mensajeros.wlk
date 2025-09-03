@@ -78,7 +78,7 @@ object camion {
 
 // Destinos posibles
 
-object puenteBrookli {
+object puenteBrooklin {
 	method puedePasar(empleado){
 		return empleado.pesoTotal() < 1000
 	}

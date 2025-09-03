@@ -1,2 +1,27 @@
-import mensajeros
+import mensajeros.*
 
+describe "Test del pago y el destino del paquete" {
+    test "Verificar si el paquete está pagado" {
+        paquete.pagado(false)
+        assert.equals(false, paquete.pagado())
+        paquete.pagado(true)
+        assert.equals(true, paquete.pagado())
+    }
+
+    test "Verificar el destino del paquete" {
+        paquete.destino(matrix)
+        assert.equals(matrix, paquete.destino())
+        paquete.destino(puenteBrooklin)
+        assert.equals(puenteBrooklin, paquete.destino())
+    }
+
+}
+
+describe "Test del peso total y la disponibilidad de llamada de los empleados" {
+  test "Test la disponibilidad de llamada de Neo" {
+    neo.tieneCredito(false)
+    assert.notThat(neo.puedeLlamar())
+    neo.tieneCredito(true)
+    assert.that(neo.puedeLlamar())
+  }
+}
