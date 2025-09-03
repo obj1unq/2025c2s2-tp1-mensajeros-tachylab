@@ -1,0 +1,58 @@
+import mensajeros.*
+
+describe "Test del pago y el destino del paquete de George" {
+  test "Verificar si el paquete de George está pagado" {
+      paqueteGeorge.pagado(false)
+      assert.equals(false, paqueteGeorge.pagado())
+      paqueteGeorge.pagado(true)       
+      assert.equals(true, paqueteGeorge.pagado())
+  }
+
+  test "Verificar el destino del paquete de George" {
+    paqueteGeorge.destino(matrix)
+    assert.equals(matrix, paqueteGeorge.destino())
+    paqueteGeorge.destino(puenteBrooklin)
+    assert.equals(puenteBrooklin, paqueteGeorge.destino())
+    }
+
+}
+
+describe "Test del peso total y la disponibilidad de llamada de los empleados" {
+  test "Test la disponibilidad de llamada de Neo" {
+    neo.tieneCredito(false)
+    assert.notThat(neo.puedeLlamar())
+    neo.tieneCredito(true)
+    assert.that(neo.puedeLlamar())
+  }
+
+  test "Test del peso variable de Sara" {
+    saraConor.peso(50)
+    saraConor.vehiculo(moto)
+    assert.equals(150, saraConor.pesoTotal())
+    saraConor.vehiculo(camion)
+    camion.acoplados(2)
+    assert.equals(1550, saraConor.pesoTotal())
+  }
+}
+
+describe "Verificación de si determinados empleados pueden llegar a alguno de los dos destinos" {
+    test "Verificar si los empleados pueden llegar a la Matrix" {
+        assert.that(matrix.puedePasar(jeanGray))
+        neo.tieneCredito(false)
+        assert.notThat(matrix.puedePasar(neo))
+        neo.tieneCredito(true)
+        assert.that(matrix.puedePasar(neo))
+        assert.notThat(matrix.puedePasar(saraConor))
+    }
+
+    test "Verificar si los empleados pueden llegar al puente de Brooklin" {
+        assert.that(puenteBrooklin.puedePasar(jeanGray))
+        assert.that(puenteBrooklin.puedePasar(neo))
+        saraConor.peso(85)
+        saraConor.vehiculo(moto)
+        assert.that(puenteBrooklin.puedePasar(saraConor))
+        saraConor.vehiculo(camion)
+        camion.acoplados(2)
+        assert.notThat(puenteBrooklin.puedePasar(saraConor))
+    }
+}
